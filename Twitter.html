@@ -1,0 +1,47 @@
+<h1>Hi this is RJ twitter website</h1>
+<div id="welcome_message">
+    
+</div>
+
+<center id="credit" style="display: none;"
+    <p>Created by plum.</p> 
+</center>
+    
+
+Tweet
+<br>
+<textarea id="first_name"></textarea>
+
+<button onclick="thing()">Post</button>
+<button onclick="clearThing()" style="background: red;">Delete All</button>
+<button onclick="hiddencredit()">Show</button>
+<button onclick="fakecredit()">Hide</button>
+
+<script>
+
+    function thing() {
+        console.log('TEST MESSAGE HERE')
+
+        var first_name = document.getElementById('first_name').value;
+
+
+
+        document.getElementById('welcome_message').innerHTML += first_name + '<button>Like</button>' + (new Date()).toISOString() + ' <br><br>';
+    }
+
+    function clearThing() {
+        document.getElementById('welcome_message').innerHTML = '';
+    }
+
+    function hiddencredit() {
+        var creditElement = document.getElementById("credit");
+        creditElement.style.display = "block";
+    }
+    
+    function fakecredit() {
+        var creditElement = document.getElementById("credit");
+        creditElement.style.display = "none";
+    }
+    
+
+</script>
