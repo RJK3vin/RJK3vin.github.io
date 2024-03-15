@@ -1,0 +1,59 @@
+<center>
+    <h1 style="color: lightblue; font-size:60px;">Hello!</h1> 
+    <p>
+        <form action="/url" method="get">
+            <p>Please enter your email and password</p>
+            <input style="border-radius: 40px; width: 300px; height: 50px;" type="text" placeholder="     Email" id="email">
+            <br>
+            <input style="border-radius: 40px; width: 300px; height: 50px;" type="text" placeholder="     Password" id="password"> 
+        </form>
+    </p>
+    <button onclick="Login()"style="border-radius: 40px; width: 300px; height: 50px;">Log In</button>
+    <br>
+    <p>If you don't have an account</p>
+    <button onclick="Signin()"style="border-radius: 40px; width: 300px; height: 50px;">Sign Up</button>
+</center>
+
+<script>
+    var users = [ 
+        {
+            email: 'spot@gmail.com',
+            password: 'dog',
+        },
+        {
+            email: 'bob@yahoo.com',
+            password: 'corn',
+        },
+        {
+            email: 'bald@icloud.com',
+            password: 'hair',
+        },
+    ];
+    
+   function Login() {
+    console.log("dwadwa")
+        var email = document.getElementById('email').value;
+    
+        var password = document.getElementById('password').value;
+        
+        var isauthenticated = false
+        for (i = 0; i < users.length; i++) {
+            if (email == users[i]['email'] && password == users[i]['password']) {
+                isauthenticated = true
+            }  
+        }
+
+        if (isauthenticated == true) {
+            window.location.href = "index.html"
+            
+            } else{
+            alert("FAIL!!!");
+        }
+   }
+
+   function Signin() {
+
+   }
+   console.log("hello world");
+
+</script>
