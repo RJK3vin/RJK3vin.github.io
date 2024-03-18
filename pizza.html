@@ -91,7 +91,7 @@
             var images = document.createElement("img")
             images.src = picture[4]
             sizepicture.appendChild(images)
-        }
+        } 
 
         if (document.getElementById('thin').checked) {
             crustdisplay.innerHTML = crust[0]
@@ -108,7 +108,7 @@
             var images = document.createElement("img")
             images.src = picture[0]
             crustpicture.appendChild(images)
-        }
+        } 
 
         if (document.getElementById('cheese').checked) {
             flavordisplay.innerHTML = flavor[0]
@@ -125,11 +125,15 @@
             var images = document.createElement("img")
             images.src = picture[5]
             flavorpicture.appendChild(images)
+        } else {
+            alert("You didn't chose an option!! Click New Order to try again");
         }
+             
         var neworderbutton = document.getElementById("NewOrder")
             neworderbutton.style.display = "block"
         var newordertext = document.getElementById("new")
             newordertext.style.display = "block" 
+        
     }
 
     function neworder() {
