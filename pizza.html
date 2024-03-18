@@ -80,16 +80,22 @@
             sizedisplay.innerHTML = size[0]
             var images = document.createElement("img")
             images.src = picture[2]
+            images.height = 400;
+            images.width = 400;
             sizepicture.appendChild(images)
         } else if (document.getElementById('medium').checked){
             sizedisplay.innerHTML = size[1]
             var images = document.createElement("img")
             images.src = picture[3]
+            images.height = 400;
+            images.width = 400;
             sizepicture.appendChild(images)
         } else if(document.getElementById('large').checked) {
             sizedisplay.innerHTML = size[2]
             var images = document.createElement("img")
             images.src = picture[4]
+            images.height = 400;
+            images.width = 400;
             sizepicture.appendChild(images)
         } 
 
@@ -97,16 +103,22 @@
             crustdisplay.innerHTML = crust[0]
             var images = document.createElement("img")
             images.src = picture[7]
+            images.height = 400;
+            images.width = 400;
             crustpicture.appendChild(images)
         } else if (document.getElementById('regular').checked){
             crustdisplay.innerHTML = crust[1]
             var images = document.createElement("img")
             images.src = picture[1]
+            images.height = 400;
+            images.width = 400;
             crustpicture.appendChild(images)
         } else if(document.getElementById('stuffed').checked) {
             crustdisplay.innerHTML = crust[2]
             var images = document.createElement("img")
             images.src = picture[0]
+            images.height = 400;
+            images.width = 400;
             crustpicture.appendChild(images)
         } 
 
@@ -114,20 +126,24 @@
             flavordisplay.innerHTML = flavor[0]
             var images = document.createElement("img")
             images.src = picture[6]
+            images.height = 400;
+            images.width = 400;
             flavorpicture.appendChild(images)
         } else if (document.getElementById('pepperoni').checked){
             flavordisplay.innerHTML = flavor[1]
             var images = document.createElement("img")
             images.src = picture[8]
+            images.height = 400;
+            images.width = 400;
             flavorpicture.appendChild(images)
         } else if(document.getElementById('soupedupcheese').checked) {
             flavordisplay.innerHTML = flavor[2]
             var images = document.createElement("img")
             images.src = picture[5]
+            images.height = 400;
+            images.width = 400;
             flavorpicture.appendChild(images)
-        } else {
-            alert("You didn't chose an option!! Click New Order to try again");
-        }
+        } 
              
         var neworderbutton = document.getElementById("NewOrder")
             neworderbutton.style.display = "block"
