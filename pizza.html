@@ -31,8 +31,12 @@
 <br>
 <p><b>Order Results</b></p>
 <div id="displaysize"></div>
+<div id="picturesize"></div>
 <div id="displaycrust"></div>
+<div id="picturecrust"></div>
 <div id="displayflavor"></div>
+<div id="pictureflavor"></div>
+
 <br>
 <p id="new" style="display: none;"><b>Do you want to place a new order?</b></p>
 <button id ="NewOrder" onclick="neworder()" style="display: none;">New Order</button>
@@ -52,34 +56,75 @@
             "Pepperoni",
             "SoupedUpCheese",
         ]
+    var picture = [
+        "Images/IMG_0242.jpeg",
+        "Images/IMG_0244.jpeg",
+        "Images/IMG_0245 2.jpeg",
+        "Images/IMG_0245 3.jpeg",
+        "Images/IMG_0245.jpeg",
+        "Images/IMG_0251.jpeg",
+        "Images/IMG_0252.jpeg",
+        "Images/IMG_0255.jpeg",
+        "Images/IMG_0253.jpeg",
+    ]
     var sizedisplay = document.getElementById("displaysize")
     var crustdisplay = document.getElementById("displaycrust")
     var flavordisplay = document.getElementById("displayflavor")
+    var sizepicture = document.getElementById("picturesize")
+    var crustpicture = document.getElementById("picturecrust")
+    var flavorpicture = document.getElementById("pictureflavor")
 
     function submitorder() {
         
         if (document.getElementById('small').checked) {
             sizedisplay.innerHTML = size[0]
+            var images = document.createElement("img")
+            images.src = picture[2]
+            sizepicture.appendChild(images)
         } else if (document.getElementById('medium').checked){
             sizedisplay.innerHTML = size[1]
+            var images = document.createElement("img")
+            images.src = picture[3]
+            sizepicture.appendChild(images)
         } else if(document.getElementById('large').checked) {
             sizedisplay.innerHTML = size[2]
+            var images = document.createElement("img")
+            images.src = picture[4]
+            sizepicture.appendChild(images)
         }
 
         if (document.getElementById('thin').checked) {
             crustdisplay.innerHTML = crust[0]
+            var images = document.createElement("img")
+            images.src = picture[7]
+            crustpicture.appendChild(images)
         } else if (document.getElementById('regular').checked){
             crustdisplay.innerHTML = crust[1]
+            var images = document.createElement("img")
+            images.src = picture[1]
+            crustpicture.appendChild(images)
         } else if(document.getElementById('stuffed').checked) {
             crustdisplay.innerHTML = crust[2]
+            var images = document.createElement("img")
+            images.src = picture[0]
+            crustpicture.appendChild(images)
         }
 
         if (document.getElementById('cheese').checked) {
             flavordisplay.innerHTML = flavor[0]
+            var images = document.createElement("img")
+            images.src = picture[6]
+            flavorpicture.appendChild(images)
         } else if (document.getElementById('pepperoni').checked){
             flavordisplay.innerHTML = flavor[1]
+            var images = document.createElement("img")
+            images.src = picture[8]
+            flavorpicture.appendChild(images)
         } else if(document.getElementById('soupedupcheese').checked) {
             flavordisplay.innerHTML = flavor[2]
+            var images = document.createElement("img")
+            images.src = picture[5]
+            flavorpicture.appendChild(images)
         }
         var neworderbutton = document.getElementById("NewOrder")
             neworderbutton.style.display = "block"
