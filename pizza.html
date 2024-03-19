@@ -2,21 +2,41 @@
 <center>
     <h1>Pizza Ordering Form</h1>
 </center>
+<p>
+    <form action="/url" method="get">
+        <input style="border-radius: 40px; width: 150px; height:30px;" type="text" placeholder="  First Name" id="firstname">
+        <input style="border-radius: 40px; width: 150px; height:30px;" type="text" placeholder="  Last Name" id="lastname">
+        <br>
+        <br>
+        <input style="border-radius: 40px; width: 150px; height:30px;" type="text" placeholder="  Street Address" id="street">
+        <input style="border-radius: 40px; width: 150px; height:30px;" type="text" placeholder="  ZIP Code" id="code">
+        <input style="border-radius: 40px; width: 150px; height:30px;" type="text" placeholder="  City" id="city">
+        <input style="border-radius: 40px; width: 150px; height:30px;" type="text" placeholder="  State" id="state">
+
+        <br>
+        <br>
+        <input style="border-radius: 40px; width: 150px; height:30px;" type="text" placeholder="  Card Number" id="cardnumber">
+        <input style="border-radius: 40px; width: 150px; height:30px;" type="text" placeholder="  Expiration date" id="expiredate">
+        <input style="border-radius: 40px; width: 150px; height:30px;" type="text" placeholder="  CVV" id="cvv">
+        <input style="border-radius: 40px; width: 150px; height:30px;" type="text" placeholder="  Name on Card" id="cardname">
+    </form>
+</p>
+
 <p><b>Choose a Pizza Size</b></p>
 <input type="radio" id="small" name="size" value="Small">
-<label for="small">Small</label>
+<label for="small">Small - $12</label>
 <input type="radio" id="medium" name="size" value="Medium">
-<label for="medium">Medium</label>
+<label for="medium">Medium - $16 </label>
 <input type="radio" id="large" name="size" value="Large">
-<label for="large">Large</label>
+<label for="large">Large - $19</label>
 <br>
 <p><b>Choose a Crust Type</b></p>
 <input type="radio" id="thin" name="type" value="Thin">
-<label for="thin">Thin</label>
+<label for="thin">Thin - $1</label>
 <input type="radio" id="regular" name="type" value="Regular">
-<label for="regular">Regular</label>
+<label for="regular">Regular - $0</label>
  <input type="radio" id="stuffed" name="type" value="Stuffed">
-<label for="stuffed">Stuffed</label>
+<label for="stuffed">Stuffed - $1</label>
 <br>
 <p><b>Choose a flavor</b></p>
 <input type="radio" id="cheese" name="flavor" value="Cheese">
@@ -36,7 +56,10 @@
 <div id="picturecrust"></div>
 <div id="displayflavor"></div>
 <div id="pictureflavor"></div>
-
+<p><b>Cost</b></p>
+<div id="price"></div>
+<p><b>Summary</b></p>
+<div id="info"></div>
 <br>
 <p id="new" style="display: none;"><b>Do you want to place a new order?</b></p>
 <button id ="NewOrder" onclick="neworder()" style="display: none;">New Order</button>
@@ -74,9 +97,23 @@
     var crustpicture = document.getElementById("picturecrust")
     var flavorpicture = document.getElementById("pictureflavor")
 
+    var fname = document.getElementById('firstname')
+    var lname = document.getElementById('lastname')
+    var street = document.getElementById('street')
+    var code = document.getElementById('code')
+    var city = document.getElementById('city')
+    var state = document.getElementById('state')
+    var cardnum = document.getElementById('cardnumber')
+    var expdate = document.getElementById('expiredate')
+    var CVV = document.getElementById('cvv')
+    var nameofcard = document.getElementById('cardname')
+
     function submitorder() {
-        
+
+    var pricetag = 0
+
         if (document.getElementById('small').checked) {
+            pricetag += 12
             sizedisplay.innerHTML = size[0]
             var images = document.createElement("img")
             images.src = picture[2]
@@ -84,6 +121,7 @@
             images.width = 400;
             sizepicture.appendChild(images)
         } else if (document.getElementById('medium').checked){
+            pricetag += 16
             sizedisplay.innerHTML = size[1]
             var images = document.createElement("img")
             images.src = picture[3]
@@ -91,6 +129,7 @@
             images.width = 400;
             sizepicture.appendChild(images)
         } else if(document.getElementById('large').checked) {
+            pricetag += 19
             sizedisplay.innerHTML = size[2]
             var images = document.createElement("img")
             images.src = picture[4]
@@ -100,13 +139,14 @@
         } 
 
         if (document.getElementById('thin').checked) {
+            pricetag += 1
             crustdisplay.innerHTML = crust[0]
             var images = document.createElement("img")
             images.src = picture[7]
             images.height = 400;
             images.width = 400;
             crustpicture.appendChild(images)
-        } else if (document.getElementById('regular').checked){
+        } else if (document.getElementById('regular').checked) {
             crustdisplay.innerHTML = crust[1]
             var images = document.createElement("img")
             images.src = picture[1]
@@ -114,6 +154,7 @@
             images.width = 400;
             crustpicture.appendChild(images)
         } else if(document.getElementById('stuffed').checked) {
+            pricetag += 1
             crustdisplay.innerHTML = crust[2]
             var images = document.createElement("img")
             images.src = picture[0]
@@ -144,11 +185,14 @@
             images.width = 400;
             flavorpicture.appendChild(images)
         } 
-             
+            
         var neworderbutton = document.getElementById("NewOrder")
             neworderbutton.style.display = "block"
         var newordertext = document.getElementById("new")
             newordertext.style.display = "block" 
+        
+        document.getElementById("price").innerHTML = "$" + pricetag 
+        document.getElementById("info").innerHTML = fname.value +" " + lname.value + "<br>"+"<br>" + street.value +" " + code.value +" " + city.value +" "+ state.value + "<br>"+"<br>"+ cardnum.value +" "+ expdate.value +" "+ CVV.value +"<br>"+"<br>" + nameofcard.value
         
     }
 
