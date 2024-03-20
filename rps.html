@@ -1,0 +1,71 @@
+<a href="index.html">Resume</a>
+<h1 id="wins">Wins</h1> 
+<h1 id="loss">Losses</h1>
+<h1 id="tie">Tie</h1>
+<div id="cpuchoice">CPU_Choice</div>
+<button onclick="rock()">Rock</button>
+<button onclick="paper()">Paper</button>
+<button onclick="scissor()">Scissor</button>
+<script>
+    var wcounter = document.getElementById('wins')
+    var lcounter = document.getElementById('loss')
+    var tcounter = document.getElementById('tie')
+    var wcontainer = 0
+    var lcontainer = 0
+    var tcontainer = 0
+    var cpudisplay = document.getElementById('cpuchoice')
+    function increase_wscore() {
+        wcontainer = wcontainer + 1
+        wcounter.innerHTML = "Wins " + wcontainer
+    }
+    function increase_lscore() {
+        lcontainer = lcontainer + 1
+        lcounter.innerHTML = "Losses " + lcontainer
+    }
+    function increase_tscore() {
+        tcontainer = tcontainer + 1
+        tcounter.innerHTML = "Tie " + tcontainer
+    }
+    
+    function rock() {
+        var choice = cpu()
+        cpudisplay.innerHTML = choice
+        if (choice == "scissor") {
+            increase_wscore()
+        } else if (choice == "paper") {
+            increase_lscore()
+        } else if (choice == "rock") {
+            increase_tscore()
+        }
+    }
+    function paper() {
+        var choice = cpu()
+        cpudisplay.innerHTML = choice
+        if (choice == "scissor") {
+            increase_lscore()
+        } else if (choice == "paper") {
+            increase_tscore()
+        } else if (choice == "rock") {
+            increase_wscore()
+        }
+    }
+    function scissor() {
+        var choice = cpu()
+        cpudisplay.innerHTML = choice
+        if (choice == "scissor") {
+            increase_tscore()
+        } else if (choice == "paper") {
+            increase_wscore()
+        } else if (choice == "rock") {
+            increase_lscore()
+        }
+    }
+    function cpu() {
+        var choices = [
+            "rock",
+            "paper",
+            "scissor",
+        ]
+        return choices[(Math.floor(Math.random() * choices.length))];
+    }
+</script>
