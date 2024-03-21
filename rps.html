@@ -1,11 +1,21 @@
 <a href="index.html">Resume</a>
-<h1 id="wins">Wins</h1> 
-<h1 id="loss">Losses</h1>
-<h1 id="tie">Tie</h1>
-<div id="cpuchoice">CPU_Choice</div>
-<button onclick="rock()">Rock</button>
-<button onclick="paper()">Paper</button>
-<button onclick="scissor()">Scissor</button>
+<h1 style="color: green;" id="wins">Wins</h1> 
+<h1 style="color: red;" id="loss">Losses</h1>
+<h1 style="color: orange;" id="tie">Tie</h1>
+<center>
+    <p>
+        <h1 id="cpuchoice">CPU_Choice</h1>
+        <button onclick="rock()">
+            <img src="https://wrpsa.com/wp-content/uploads/2021/08/rock.png" style="width: 200px; height: 200px;">
+        </button>
+        <button onclick="paper()">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-YEX5yPudY1WreLZ4URtQDlxhq7eZrD_9lc8K-Q34GRjjN4iLkRI5Fsjh1YGfbWWQ9ws&usqp=CAU" style="width: 200px; height: 200px;">
+        </button>
+        <button onclick="scissor()">
+            <img src="https://wrpsa.com/wp-content/uploads/2021/08/scissors.png" style="width: 200px; height: 200px;">
+        </button>
+    </p>
+</center>
 <script>
     var wcounter = document.getElementById('wins')
     var lcounter = document.getElementById('loss')
@@ -30,41 +40,41 @@
     function rock() {
         var choice = cpu()
         cpudisplay.innerHTML = choice
-        if (choice == "scissor") {
+        if (choice == "Scissor") {
             increase_wscore()
-        } else if (choice == "paper") {
+        } else if (choice == "Paper") {
             increase_lscore()
-        } else if (choice == "rock") {
+        } else if (choice == "Rock") {
             increase_tscore()
         }
     }
     function paper() {
         var choice = cpu()
         cpudisplay.innerHTML = choice
-        if (choice == "scissor") {
+        if (choice == "Scissor") {
             increase_lscore()
-        } else if (choice == "paper") {
+        } else if (choice == "Paper") {
             increase_tscore()
-        } else if (choice == "rock") {
+        } else if (choice == "Rock") {
             increase_wscore()
         }
     }
     function scissor() {
         var choice = cpu()
         cpudisplay.innerHTML = choice
-        if (choice == "scissor") {
+        if (choice == "Scissor") {
             increase_tscore()
-        } else if (choice == "paper") {
+        } else if (choice == "Paper") {
             increase_wscore()
-        } else if (choice == "rock") {
+        } else if (choice == "Rock") {
             increase_lscore()
         }
     }
     function cpu() {
         var choices = [
-            "rock",
-            "paper",
-            "scissor",
+            "Rock",
+            "Paper",
+            "Scissor",
         ]
         return choices[(Math.floor(Math.random() * choices.length))];
     }

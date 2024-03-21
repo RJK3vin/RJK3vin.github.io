@@ -1,6 +1,6 @@
 <a href="index.html">Resume</a>
 <center>
-    <h1>Pizza Ordering Form</h1>
+    <h1 style="font-family: Verdana; color: rgb(215, 40, 104);">Pizza Ordering Form</h1>
 </center>
 <p>
     <form action="/url" method="get">
@@ -22,7 +22,7 @@
     </form>
 </p>
 
-<p><b>Choose a Pizza Size</b></p>
+<p style="font-family: Verdana; color: rgb(236, 39, 72);"><b>Choose a Pizza Size</b></p>
 <input type="radio" id="small" name="size" value="Small">
 <label for="small">Small - $12</label>
 <input type="radio" id="medium" name="size" value="Medium">
@@ -30,7 +30,7 @@
 <input type="radio" id="large" name="size" value="Large">
 <label for="large">Large - $19</label>
 <br>
-<p><b>Choose a Crust Type</b></p>
+<p style="font-family: Verdana; color: rgb(236, 39, 72);"><b>Choose a Crust Type</b></p>
 <input type="radio" id="thin" name="type" value="Thin">
 <label for="thin">Thin - $1</label>
 <input type="radio" id="regular" name="type" value="Regular">
@@ -38,7 +38,7 @@
  <input type="radio" id="stuffed" name="type" value="Stuffed">
 <label for="stuffed">Stuffed - $1</label>
 <br>
-<p><b>Choose a flavor</b></p>
+<p style="font-family: Verdana; color: rgb(236, 39, 72);"><b>Choose a flavor</b></p>
 <input type="radio" id="cheese" name="flavor" value="Cheese">
 <label for="cheese">Cheese</label>
 <input type="radio" id="pepperoni" name="flavor" value="Pepperoni">
@@ -47,22 +47,22 @@
 <label for="soupedupcheese">SoupedUpCheese</label>
 <br>
 <br>
-<button onclick="submitorder()">Submit</button>
+<button onclick="submitorder()" style="width: 80px; height: 40px; font-size: 20px;">Submit</button>
 <br>
-<p><b>Order Results</b></p>
+<p style="font-family: Verdana; color: rgb(252, 159, 175);"><b>Order Results</b></p>
 <div id="displaysize"></div>
-<div id="picturesize"></div>
+<div id="picturesize"></div>  
 <div id="displaycrust"></div>
 <div id="picturecrust"></div>
 <div id="displayflavor"></div>
 <div id="pictureflavor"></div>
-<p><b>Cost</b></p>
+<p style="font-family: Verdana; color: rgb(252, 159, 175);"><b>Cost</b></p>
 <div id="price"></div>
-<p><b>Summary</b></p>
+<p style="font-family: Verdana; color: rgb(252, 159, 175);"><b>Summary</b></p>
 <div id="info"></div>
 <br>
-<p id="new" style="display: none;"><b>Do you want to place a new order?</b></p>
-<button id ="NewOrder" onclick="neworder()" style="display: none;">New Order</button>
+<p id="new" style="display: none; font-family: Verdana; color:rgb(215, 40, 104);"><b>Do you want to place a new order?</b></p>
+<button id ="NewOrder" onclick="neworder()" style="display: none; width: 115px; height: 40px; font-size: 20px;">New Order</button>
 <script>
     var size = [
             "Small",
