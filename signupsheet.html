@@ -1,7 +1,7 @@
 <center>
     <h1 style="color: lightblue; font-size:60px;">Hello!</h1> 
     <p>
-        <form action="/url" method="get">
+        <form>
             <p>Please enter your email and password</p>
             <input style="border-radius: 40px; width: 300px; height: 50px;" type="text" placeholder="     Email" id="email">
             <br>
@@ -28,7 +28,8 @@
             email: 'bald@icloud.com',
             password: 'hair',
         },
-    ];
+    ]
+    
     
    function Login() {
         var email = document.getElementById('email').value;
@@ -39,7 +40,7 @@
         for (i = 0; i < users.length; i++) {
             if (email == users[i]['email'] && password == users[i]['password']) {
                 isauthenticated = true
-            }  
+            } 
         }
     
         if (isauthenticated == true) {
@@ -51,7 +52,9 @@
    }
 
    function Signin() {
-
+        var newemail = document.getElementById('email').value
+        var newpassword = document.getElementById('password').value
+        users.push({ email: newemail, password: newpassword})
    }
    console.log("hello world");
 
