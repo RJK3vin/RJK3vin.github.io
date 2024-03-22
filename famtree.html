@@ -50,16 +50,17 @@
     for (i = 0; i < family.length; i++) {
         addrow(family[i]['name'], family[i]['age'], family[i]['height'], family[i]['weight'])
     }
-    function addrow(namefirst, ag3, tall, heavy) {
-        row = document.createElement('tr')
-        fname = document.createElement('td')
-        age = document.createElement('td')
-        height = document.createElement('td')
-        weight = document.createElement('td')
-        fname.innerHTML = namefirst
-        age.innerHTML = ag3
-        height.innerHTML = tall
-        weight.innerHTML = heavy
+    
+    function addrow(furname, hge, hite, w8) {
+        var row = document.createElement('tr')
+        var fname = document.createElement('td')
+        var age = document.createElement('td')
+        var height = document.createElement('td')
+        var weight = document.createElement('td')
+        fname.innerHTML = furname
+        age.innerHTML = hge
+        height.innerHTML = hite
+        weight.innerHTML = w8
         row.appendChild(fname)
         row.appendChild(age)
         row.appendChild(height)
