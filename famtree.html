@@ -1,0 +1,70 @@
+<table id ="dynamic">
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Height</th>
+        <th>Weight</th>
+    </tr>
+</table>
+<p>
+    <form onsubmit="Add(event)">
+        <input style="border-radius: 40px; width: 150px; height: 30px;" type="text" placeholder="  First Name" id="firstname">
+        <input style="border-radius: 40px; width: 150px; height: 30px;" type="text" placeholder="  Age" id="ag3">
+        <input style="border-radius: 40px; width: 150px; height: 30px;" type="text" placeholder="  Height" id="tall">
+        <input style="border-radius: 40px; width: 150px; height: 30px;" type="text" placeholder="  Weight" id="heavy">
+        <button style="width: 50px; height: 30px;">Add</button>
+        
+    </form>
+</p>
+<br>
+
+<script>
+
+    var family = [
+        {name:"Pu", age:"80", height:"60", weight:"130"},
+        {name:"Ya", age:"77", height:"55", weight:"110"},
+        {name:"Ryan", age:"50", height:"65", weight:"160"},
+        {name:"Nantana", age:"51", height:"62", weight:"147"},
+        {name:"Irisa", age:"16", height:"59", weight:"120"},
+        {name:"Eve", age:"17", height:"61", weight:"125"},
+        {name:"Rj", age:"18", height:"68", weight:"141"},
+        {name:"Plum", age:"32", height:"65", weight:"170"},
+
+    ]
+
+    var namefirst = document.getElementById('firstname')
+    var ag3 = document.getElementById('ag3')
+    var tall = document.getElementById('tall')
+    var heavy = document.getElementById('heavy')
+
+    function Add(event) {
+        event.preventDefault()
+        
+        addrow(namefirst.value, ag3.value, tall.value, heavy.value)
+        namefirst.value = ""
+        ag3.value = ""
+        tall.value = ""
+        heavy.value = ""
+    }
+    
+    for (i = 0; i < family.length; i++) {
+        addrow(family[i]['name'], family[i]['age'], family[i]['height'], family[i]['weight'])
+    }
+    function addrow(namefirst, ag3, tall, heavy) {
+        row = document.createElement('tr')
+        fname = document.createElement('td')
+        age = document.createElement('td')
+        height = document.createElement('td')
+        weight = document.createElement('td')
+        fname.innerHTML = namefirst
+        age.innerHTML = ag3
+        height.innerHTML = tall
+        weight.innerHTML = heavy
+        row.appendChild(fname)
+        row.appendChild(age)
+        row.appendChild(height)
+        row.appendChild(weight)
+        table = document.getElementById('dynamic')
+        table.appendChild(row)
+    }
+</script>
