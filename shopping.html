@@ -1,0 +1,80 @@
+<center>
+    <h1>Kevin's Shoe Shop</h1>
+</center>
+<a href="index.html">Resume</a>
+<div id="shoppingcart" style="display: none;"></div>
+<p><b>Jordans</b></p>
+<p>
+    <button onclick="add('jordan-4-bred')">
+        Add to cart
+        <p>Jordan 4 Bred</p>
+        <img src="https://images.stockx.com/images/Air-Jordan-4-Retro-Bred-Reimagined-Product.jpg?fit=fill&bg=FFFFFF&w=140&h=75&fm=avif&auto=compress&dpr=2&trim=color&updated_at=1705980651&q=60">
+    </button>
+    <button onclick="add('jordan-4-military-black')">
+        Add to cart
+        <p>Jordan 4 Miltary Black</p>
+        <img src="https://images.stockx.com/images/Air-Jordan-4-Retro-Military-Black-Product.jpg?fit=fill&bg=FFFFFF&w=140&h=75&fm=avif&auto=compress&dpr=2&trim=color&updated_at=1652711257&q=60">
+    </button>
+    <button onclick="add()">
+        Add to cart 
+        <p>Jordan 3 Dark Iris</p>
+        <img src="https://images.stockx.com/images/Air-Jordan-3-Retro-Dark-Iris-GS-Product.jpg?fit=fill&bg=FFFFFF&w=140&h=75&fm=avif&auto=compress&dpr=2&trim=color&updated_at=1657781101&q=60">
+    </button>
+    <button onclick="add()">
+        Add to cart 
+        <p>Jordan 1 Off-White Chicago</p>
+        <img src="https://images.stockx.com/images/Air-Jordan-1-Retro-High-Off-White-Chicago-Product.jpg?fit=fill&bg=FFFFFF&w=140&h=75&fm=avif&auto=compress&dpr=2&trim=color&updated_at=1641327826&q=60"> 
+    </button>
+    <button onclick="add()">
+        Add to cart 
+        <p>Jordan 1 University Blue</p>
+        <img src="https://images.stockx.com/images/Air-Jordan-1-Retro-High-White-University-Blue-Black-Product.jpg?fit=fill&bg=FFFFFF&w=140&h=75&fm=avif&auto=compress&dpr=2&trim=color&updated_at=1611777406&q=60">
+    </button>
+</p>
+
+<br>
+<p><b>Yeezy</b></p>
+    <button onclick="add()">
+        Add to cart 
+        <p>Yeezy 700 V3</p>
+        <img src="https://images.stockx.com/images/adidas-Yeezy-700-V3-Arzareth-Product.jpg?fit=fill&bg=FFFFFF&w=140&h=75&fm=avif&auto=compress&dpr=2&trim=color&updated_at=1606323306&q=60">
+    </button>
+    <button onclick="add()">
+        Add to cart 
+        <p>Yeezy Boost Zebra</p>
+        <img src="https://images.stockx.com/images/adidas-Yeezy-Boost-350-V2-Zebra-Product.jpg?fit=fill&bg=FFFFFF&w=140&h=75&fm=avif&auto=compress&dpr=2&trim=color&updated_at=1703165200&q=60">
+    </button>
+    <button onclick="add()">
+        Add to cart 
+        <p>Yeezy Boost Oreo</p>
+        <img src="https://images.stockx.com/images/adidas-Yeezy-Boost-350-V2-Core-Black-White-Product.jpg?fit=fill&bg=FFFFFF&w=140&h=75&fm=avif&auto=compress&dpr=2&trim=color&updated_at=1704375370&q=60">
+    </button>
+    <button onclick="add()">
+        Add to cart 
+        <p>Yeezy Boost Blue Tint</p>
+        <img src="https://images.stockx.com/images/adidas-Yeezy-Boost-350-V2-Blue-Tint-Product.jpg?fit=fill&bg=FFFFFF&w=140&h=75&fm=avif&auto=compress&dpr=2&trim=color&updated_at=1703859855&q=60">
+    </button>
+    <button onclick="add()">
+        Add to cart 
+        <p>Yeezy Slides Onyx</p>
+        <img src="https://images.stockx.com/images/adidas-Yeezy-Slide-Dark-Onyx-Product.jpg?fit=fill&bg=FFFFFF&w=140&h=75&fm=avif&auto=compress&dpr=2&trim=color&updated_at=1710364038&q=60">
+    </button>
+<br>
+<p><b>New Balances</b></p>
+<br>
+<p><b>Nike</b></p>
+<br>
+<p><b>Adidas</b></p>
+<script>
+    var kart = document.getElementById('shoppingcart')
+    var cart = [
+
+    ]
+
+    function add(shoe) {
+        cart.push(shoe)
+        var jordans = document.createElement('img')
+        jordans.src = "https://images.stockx.com/images/Air-Jordan-4-Retro-Bred-Reimagined-Product.jpg?fit=fill&bg=FFFFFF&w=140&h=75&fm=avif&auto=compress&dpr=2&trim=color&updated_at=1705980651&q=60"
+        kart.appendChild(jordans)
+   }
+</script>
