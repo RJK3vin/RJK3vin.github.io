@@ -1,9 +1,16 @@
 <center>
     <h1>Kevin's Shoe Shop</h1>
 </center>
+<img align="right" style="width: 50; height: 50;" src="https://t4.ftcdn.net/jpg/03/76/00/05/360_F_376000529_eLaqt42GZJloGxFxyurcN4ft4eHExvnR.jpg">
+<br>
+<br>
+<p align="right">
+    <button onclick="showcart()">Show cart</button>
+</p>
 <a href="index.html">Resume</a>
 <div id="shoppingcart" style="display: none;"></div>
 <p><b>Jordans</b></p>
+
 <p>
     <button onclick="add('jordan-4-bred')">
         Add to cart
@@ -33,6 +40,7 @@
 </p>
 
 <br>
+
 <p><b>Yeezy</b></p>
     <button onclick="add()">
         Add to cart 
@@ -61,11 +69,37 @@
     </button>
 <br>
 <p><b>New Balances</b></p>
+    <button onclick="add()">
+        Add to cart 
+        <p>Blue Protection Pack</p>
+        <img src="https://images.stockx.com/images/New-Balance-2002R-Protection-Pack-Light-Arctic-Grey-Purple-Product.jpg?fit=fill&bg=FFFFFF&w=140&h=75&fm=avif&auto=compress&dpr=2&trim=color&updated_at=1660746366&q=60">
+    </button>
+    <button onclick="add()">
+        Add to cart 
+        <p>Joe Freshgoods Pink</p>
+        <img src="https://images.stockx.com/images/New-Balance-993-Joe-Freshgoods-Performance-Art-Powder-Pink-Product.jpg?fit=fill&bg=FFFFFF&w=140&h=75&fm=avif&auto=compress&dpr=2&trim=color&updated_at=1668096427&q=60">
+    </button>
+    <button onclick="add()">
+        Add to cart 
+        <p>933 MiUSA Grey</p>
+        <img src="https://images.stockx.com/images/New-Balance-993-MIU-Grey-Product.jpg?fit=fill&bg=FFFFFF&w=140&h=75&fm=avif&auto=compress&dpr=2&trim=color&updated_at=1706195351&q=60">
+    </button>
+    <button onclick="add()">
+        Add to cart 
+        <p>550 White Green</p>
+        <img src="https://images.stockx.com/images/New-Balance-550-White-Green-Product.jpg?fit=fill&bg=FFFFFF&w=140&h=75&fm=avif&auto=compress&dpr=2&trim=color&updated_at=1628002321&q=60">
+    </button>
+    <button onclick="add()">
+        Add to cart 
+        <p>530 White Silver Navy</p>
+        <img src="https://images.stockx.com/images/New-Balance-530-White-Silver-Navy-Product.jpg?fit=fill&bg=FFFFFF&w=140&h=75&fm=avif&auto=compress&dpr=2&trim=color&updated_at=1657865292&q=60">
+    </button>
 <br>
 <p><b>Nike</b></p>
 <br>
 <p><b>Adidas</b></p>
 <script>
+    var kartcontainer = 0
     var kart = document.getElementById('shoppingcart')
     var cart = [
 
