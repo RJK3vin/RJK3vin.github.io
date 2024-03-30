@@ -4,14 +4,23 @@
 <img align="right" style="width: 50; height: 50;" src="https://t4.ftcdn.net/jpg/03/76/00/05/360_F_376000529_eLaqt42GZJloGxFxyurcN4ft4eHExvnR.jpg">
 <br>
 <br>
+<br>
+<div align="right" id="number"></div>
 <p align="right">
     <button onclick="showcart()">Show cart</button>
 </p>
+<p align="right">
+    <button onclick="hidecart()">Hide cart</button>
+</p>
+<div id="shoppingcart" style="display: none;">
+    <p><b>Cart</b></p>
+</div>
+<div id="deleteitem" style="display: none;">
+    <button onclick="deleteitem()">Delete Item</button>
+</div>
+<br>
 <a href="index.html">Resume</a>
-<div id="shoppingcart" style="display: none;"></div>
 <p><b>Jordans</b></p>
-
-<p>
     <button onclick="add('jordan-4-bred')">
         Add to cart
         <p>Jordan 4 Bred</p>
@@ -37,10 +46,7 @@
         <p>Jordan 1 University Blue</p>
         <img src="https://images.stockx.com/images/Air-Jordan-1-Retro-High-White-University-Blue-Black-Product.jpg?fit=fill&bg=FFFFFF&w=140&h=75&fm=avif&auto=compress&dpr=2&trim=color&updated_at=1611777406&q=60">
     </button>
-</p>
-
 <br>
-
 <p><b>Yeezy</b></p>
     <button onclick="add()">
         Add to cart 
@@ -96,8 +102,31 @@
     </button>
 <br>
 <p><b>Nike</b></p>
-<br>
-<p><b>Adidas</b></p>
+    <button onclick="add()">
+        Add to cart 
+        <p>Louis Vuitton Air Force 1</p>
+        <img src="https://images.stockx.com/images/Louis-Vuitton-Nike-Air-Force-1-Low-By-Virgil-Abloh-White-Product.jpg?fit=fill&bg=FFFFFF&w=140&h=75&fm=avif&auto=compress&dpr=2&trim=color&updated_at=1655385883&q=60">
+    </button>
+    <button onclick="add()">
+        Add to cart 
+        <p>Air Max 270 White Black</p>
+        <img src="https://images.stockx.com/images/Nike-Air-Max-270-White-Black-Product.jpg?fit=fill&bg=FFFFFF&w=140&h=75&fm=avif&auto=compress&dpr=2&trim=color&updated_at=1609367759&q=60">
+    </button>
+    <button onclick="add()">
+        Add to cart 
+        <p>Ben & Jerry's Chunky Dunky</p>
+        <img src="https://images.stockx.com/images/Nike-SB-Dunk-Low-Ben-Jerrys-Chunky-Dunky-Product.jpg?fit=fill&bg=FFFFFF&w=140&h=75&fm=avif&auto=compress&dpr=2&trim=color&updated_at=1607043246&q=60">
+    </button>
+    <button onclick="add()">
+        Add to cart 
+        <p>Freddy Krueger</p>
+        <img src="https://images.stockx.com/images/Nike-Dunk-SB-Low-Freddy-Krueger.jpg?fit=fill&bg=FFFFFF&w=140&h=75&fm=avif&auto=compress&dpr=2&trim=color&updated_at=1607045341&q=60">
+    </button>
+    <button onclick="add()">
+        Add to cart 
+        <p>Back To The Future</p>
+        <img src="https://images.stockx.com/images/Nike-Air-Mag-Back-To-The-Future-BTTF-Product.jpg?fit=fill&bg=FFFFFF&w=140&h=75&fm=avif&auto=compress&dpr=2&trim=color&updated_at=1648065975&q=60">
+    </button>
 <script>
     var kartcontainer = 0
     var kart = document.getElementById('shoppingcart')
@@ -106,9 +135,24 @@
     ]
 
     function add(shoe) {
+        kartcontainer += 1
         cart.push(shoe)
         var jordans = document.createElement('img')
         jordans.src = "https://images.stockx.com/images/Air-Jordan-4-Retro-Bred-Reimagined-Product.jpg?fit=fill&bg=FFFFFF&w=140&h=75&fm=avif&auto=compress&dpr=2&trim=color&updated_at=1705980651&q=60"
         kart.appendChild(jordans)
+        document.getElementById('number').innerHTML = kartcontainer
    }
+   
+    function showcart() {
+        shopcart = document.getElementById('shoppingcart')
+        shopcart.style.display='block'
+        deleteshopcart = document.getElementById('deleteitem')
+        deleteshopcart.style.display='block'
+    }
+    function hidecart() {
+        shopcart = document.getElementById('shoppingcart')
+        shopcart.style.display='none'
+        deleteshopcart = document.getElementById('deleteitem')
+        deleteshopcart.style.display='none'
+    }
 </script>
