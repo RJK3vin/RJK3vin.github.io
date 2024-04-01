@@ -41,25 +41,22 @@
     function userschoice(userchoice) {
         var choice = cpu()
         cpudisplay.innerHTML = choice
-        if (userchoice == 'rock' & choice == "Scissor") {
-            increase_wscore()
-        } else if (userchoice == 'paper' & choice == "Rock") {
-            increase_wscore()
-        } else if (userchoice == 'scissor' & choice == "Paper") {
+        if (((userchoice == 'rock' && choice == 'scissor') || (userchoice == 'paper' && choice == 'rock') || (userchoice == 'scissor' && choice == 'paper'))){
             increase_wscore()
         } else if (userchoice == choice) {
             increase_tscore()
         } else {
             increase_lscore()
         }
+        
             
     }   
 
     function cpu() {
         var choices = [
-            "Rock",
-            "Paper",
-            "Scissor",
+            "rock",
+            "paper",
+            "scissor",
         ]
         return choices[(Math.floor(Math.random() * choices.length))];
     }
