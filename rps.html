@@ -5,13 +5,13 @@
 <center>
     <p>
         <h1 id="cpuchoice">CPU_Choice</h1>
-        <button onclick="rock()">
+        <button onclick="userschoice('rock')">
             <img src="https://wrpsa.com/wp-content/uploads/2021/08/rock.png" style="width: 200px; height: 200px;">
         </button>
-        <button onclick="paper()">
+        <button onclick="userschoice('paper')">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-YEX5yPudY1WreLZ4URtQDlxhq7eZrD_9lc8K-Q34GRjjN4iLkRI5Fsjh1YGfbWWQ9ws&usqp=CAU" style="width: 200px; height: 200px;">
         </button>
-        <button onclick="scissor()">
+        <button onclick="userschoice('scissor')">
             <img src="https://wrpsa.com/wp-content/uploads/2021/08/scissors.png" style="width: 200px; height: 200px;">
         </button>
     </p>
@@ -37,39 +37,24 @@
         tcounter.innerHTML = "Tie " + tcontainer
     }
     
-    function rock() {
+    
+    function userschoice(userchoice) {
         var choice = cpu()
         cpudisplay.innerHTML = choice
-        if (choice == "Scissor") {
+        if (userchoice == 'rock' & choice == "Scissor") {
             increase_wscore()
-        } else if (choice == "Paper") {
-            increase_lscore()
-        } else if (choice == "Rock") {
-            increase_tscore()
-        }
-    }
-    function paper() {
-        var choice = cpu()
-        cpudisplay.innerHTML = choice
-        if (choice == "Scissor") {
-            increase_lscore()
-        } else if (choice == "Paper") {
-            increase_tscore()
-        } else if (choice == "Rock") {
+        } else if (userchoice == 'paper' & choice == "Rock") {
             increase_wscore()
-        }
-    }
-    function scissor() {
-        var choice = cpu()
-        cpudisplay.innerHTML = choice
-        if (choice == "Scissor") {
-            increase_tscore()
-        } else if (choice == "Paper") {
+        } else if (userchoice == 'scissor' & choice == "Paper") {
             increase_wscore()
-        } else if (choice == "Rock") {
+        } else if (userchoice == choice) {
+            increase_tscore()
+        } else {
             increase_lscore()
         }
-    }
+            
+    }   
+
     function cpu() {
         var choices = [
             "Rock",
