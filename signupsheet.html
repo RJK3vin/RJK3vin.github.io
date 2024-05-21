@@ -2,10 +2,15 @@
     <h1 style="color: lightblue; font-size:60px;">Hello!</h1> 
     <p>
         <form>
-            <p>Please enter your email and password</p>
-            <input style="border-radius: 40px; width: 300px; height: 50px;" type="text" placeholder="     Email" id="email">
+            <label for="user_email">Email Address:</label>
+            <div>
+            <input style="border-radius: 40px; width: 300px; height: 50px;" type = "email" id ="user_email" name = "email" placeholder ="     you@example.com"> 
+            </div>
             <br>
-            <input style="border-radius: 40px; width: 300px; height: 50px;" type="text" placeholder="     Password" id="password"> 
+            <label for="user_password">Password:</label>
+            <div>
+                <input style="border-radius: 40px; width: 300px; height: 50px;" type="password" placeholder="     Password" id="user_password" name ="password"> 
+            </div>
         </form>
     </p>
     <button onclick="Login()"style="border-radius: 40px; width: 300px; height: 50px;">Log In</button>
@@ -13,7 +18,7 @@
     <p>If you don't have an account</p>
     <button onclick="Signin()"style="border-radius: 40px; width: 300px; height: 50px;">Sign Up</button>
 </center>
-
+    
 <script>
     var users = [ 
         {
