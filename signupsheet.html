@@ -37,9 +37,9 @@
     
     
    function Login() {
-        var email = document.getElementById('email').value;
+        var email = document.getElementById('user_email').value;
     
-        var password = document.getElementById('password').value;
+        var password = document.getElementById('user_password').value;
         
         var isauthenticated = false
         for (i = 0; i < users.length; i++) {
@@ -57,8 +57,8 @@
    }
 
    function Signin() {
-        var newemail = document.getElementById('email').value
-        var newpassword = document.getElementById('password').value
+        var newemail = document.getElementById('user_email').value
+        var newpassword = document.getElementById('user_password').value
         users.push({ email: newemail, password: newpassword})
    }
    console.log("hello world");
